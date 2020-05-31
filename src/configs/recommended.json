@@ -1,0 +1,7 @@
+{
+  "extends": "./configs/base.json",
+  "rules": {
+    "codestyle/no-accessor-recursion": "warn",
+    "codestyle/no-foreach-push": "error"
+  }
+}
