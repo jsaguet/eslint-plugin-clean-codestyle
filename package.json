@@ -10,6 +10,12 @@
   "author": "Julien Saguet",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "tsc",
+    "postbuild": "cpy ./package.json ./dist",
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/common-tags": "1.8.0",
     "@types/eslint": "6.8.1",
@@ -18,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "3.0.2",
     "@typescript-eslint/parser": "3.0.2",
     "common-tags": "1.8.0",
+    "cpy-cli": "3.1.1",
     "eslint": "7.1.0",
     "husky": "4.2.5",
     "jest": "26.0.1",
