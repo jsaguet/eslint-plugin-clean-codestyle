@@ -73,9 +73,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 3,
-          column: 16,
+          column: 12,
           endLine: 3,
-          endColumn: 24,
+          endColumn: 20,
           data: {
             kind: 'get',
             methodName: 'bar',
@@ -84,9 +84,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 7,
-          column: 9,
+          column: 5,
           endLine: 7,
-          endColumn: 17,
+          endColumn: 13,
           data: {
             kind: 'set',
             methodName: 'bar',
@@ -95,9 +95,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 11,
-          column: 9,
+          column: 5,
           endLine: 11,
-          endColumn: 17,
+          endColumn: 13,
           data: {
             kind: 'get',
             methodName: 'baz',
@@ -106,9 +106,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 16,
-          column: 21,
+          column: 17,
           endLine: 16,
-          endColumn: 29,
+          endColumn: 25,
           data: {
             kind: 'get',
             methodName: 'bat',
@@ -117,9 +117,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 22,
-          column: 20,
+          column: 14,
           endLine: 22,
-          endColumn: 28,
+          endColumn: 22,
           data: {
             kind: 'get',
             methodName: 'bam',
@@ -128,9 +128,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 28,
-          column: 23,
+          column: 19,
           endLine: 28,
-          endColumn: 31,
+          endColumn: 27,
           data: {
             kind: 'get',
             methodName: 'bas',
@@ -139,9 +139,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 32,
-          column: 16,
+          column: 12,
           endLine: 32,
-          endColumn: 24,
+          endColumn: 20,
           data: {
             kind: 'set',
             methodName: 'bas',
@@ -175,9 +175,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 7,
-          column: 32,
+          column: 20,
           endLine: 7,
-          endColumn: 40,
+          endColumn: 28,
           data: {
             kind: 'get',
             methodName: 'foo',
@@ -186,9 +186,9 @@ ruleTester.run(ruleName, rule, {
         {
           messageId,
           line: 10,
-          column: 32,
+          column: 20,
           endLine: 10,
-          endColumn: 40,
+          endColumn: 28,
           data: {
             kind: 'get',
             methodName: 'bar',
