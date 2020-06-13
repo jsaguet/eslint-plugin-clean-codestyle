@@ -2,11 +2,18 @@
   "name": "eslint-plugin-clean-codestyle",
   "version": "1.0.0",
   "description": "Set of eslint rules to enforce clean codestyle",
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "clean-codestyle",
+    "clean-code"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jsaguet/eslint-plugin-clean-codestyle"
   },
+  "homepage": "https://github.com/jsaguet/eslint-plugin-clean-codestyle#readme",
   "author": "Julien Saguet",
   "license": "MIT",
   "private": false,
