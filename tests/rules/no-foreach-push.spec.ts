@@ -1,6 +1,6 @@
-import {stripIndent} from 'common-tags';
-import rule, {messageId, ruleName} from '../../src/rules/no-foreach-push';
-import {ruleTester} from '../utils/rule-tester';
+import { stripIndent } from 'common-tags';
+import rule, { messageId, ruleName } from '../../src/rules/no-foreach-push';
+import { ruleTester } from '../utils/rule-tester';
 
 ruleTester.run(ruleName, rule, {
   valid: [

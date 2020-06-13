@@ -1,7 +1,8 @@
 {
   "extends": "./configs/base.json",
   "rules": {
-    "codestyle/no-accessor-recursion": "warn",
-    "codestyle/no-foreach-push": "error"
+    "clean-codestyle/no-accessor-recursion": "error",
+    "clean-codestyle/no-foreach-push": "error",
+    "clean-codestyle/no-map-without-usage": "error"
   }
 }
