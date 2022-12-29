@@ -1,4 +1,4 @@
-import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/utils';
 
 export const ruleName = 'no-map-without-usage';
 
@@ -8,12 +8,12 @@ export type MessageIds = typeof messageId;
 type Options = [];
 
 const rule: TSESLint.RuleModule<MessageIds, Options> = {
+  defaultOptions: [],
   meta: {
     type: 'problem',
     docs: {
       description:
         'Prevents Array.prototype.map from being called and the results not used.',
-      category: 'Possible Errors',
       recommended: 'error',
       url: '',
     },
@@ -27,14 +27,13 @@ const rule: TSESLint.RuleModule<MessageIds, Options> = {
     context: TSESLint.RuleContext<MessageIds, Options>,
   ): TSESLint.RuleListener => {
     return {
-      [`ExpressionStatement > CallExpression[callee.property.name='map'] Identifier[name='map']`]: (
-        node: TSESTree.Identifier,
-      ): void => {
-        context.report({
-          node: node,
-          messageId,
-        });
-      },
+      [`ExpressionStatement > CallExpression[callee.property.name='map'] Identifier[name='map']`]:
+        (node: TSESTree.Identifier): void => {
+          context.report({
+            node: node,
+            messageId,
+          });
+        },
     };
   },
 };
