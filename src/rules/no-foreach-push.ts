@@ -1,4 +1,4 @@
-import { TSESTree, TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESTree, TSESLint } from '@typescript-eslint/utils';
 
 export const ruleName = 'no-foreach-push';
 
@@ -8,12 +8,12 @@ export type MessageIds = typeof messageId;
 type Options = [];
 
 const rule: TSESLint.RuleModule<MessageIds, Options> = {
+  defaultOptions: [],
   meta: {
     type: 'problem',
     docs: {
       description:
         'Enforce using Array.prototype.map instead of Array.prototype.forEach and Array.prototype.push.',
-      category: 'Possible Errors',
       recommended: 'error',
       url: '',
     },
@@ -27,14 +27,13 @@ const rule: TSESLint.RuleModule<MessageIds, Options> = {
     context: TSESLint.RuleContext<MessageIds, Options>,
   ): TSESLint.RuleListener => {
     return {
-      "CallExpression[callee.property.name='forEach'] MemberExpression > Identifier[name='push']": (
-        node: TSESTree.MethodDefinition,
-      ): void => {
-        context.report({
-          node,
-          messageId,
-        });
-      },
+      "CallExpression[callee.property.name='forEach'] MemberExpression > Identifier[name='push']":
+        (node: TSESTree.MethodDefinition): void => {
+          context.report({
+            node,
+            messageId,
+          });
+        },
     };
   },
 };

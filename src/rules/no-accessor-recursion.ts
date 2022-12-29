@@ -1,4 +1,4 @@
-import { TSESLint, TSESTree } from '@typescript-eslint/experimental-utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/utils';
 import { getPropertyName } from '../utils';
 
 export const ruleName = 'no-accessor-recursion';
@@ -9,11 +9,11 @@ export type MessageIds = typeof messageId;
 type Options = [];
 
 const rule: TSESLint.RuleModule<MessageIds, Options> = {
+  defaultOptions: [],
   meta: {
     type: 'problem',
     docs: {
       description: 'Disallows recursion in accessors',
-      category: 'Possible Errors',
       recommended: 'error',
       url: '',
     },
@@ -39,20 +39,19 @@ const rule: TSESLint.RuleModule<MessageIds, Options> = {
       'MethodDefinition[kind=/get|set/]:exit': (): void => {
         accessorName = '';
       },
-      ["MethodDefinition[kind=/get|set/] MemberExpression[object.type='ThisExpression'] > Identifier"]: (
-        node: TSESTree.Identifier,
-      ): void => {
-        if (node.name === accessorName) {
-          context.report({
-            node: node.parent,
-            messageId,
-            data: {
-              kind,
-              methodName: node.name,
-            },
-          });
-        }
-      },
+      ["MethodDefinition[kind=/get|set/] MemberExpression[object.type='ThisExpression'] > Identifier"]:
+        (node: TSESTree.Identifier): void => {
+          if (node.name === accessorName) {
+            context.report({
+              node: node.parent,
+              messageId,
+              data: {
+                kind,
+                methodName: node.name,
+              },
+            });
+          }
+        },
     };
   },
 };
